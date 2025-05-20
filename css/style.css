@@ -1,0 +1,204 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&display=swap');
+
+/* Base Styles - Light Mode */
+:root {
+    --pixel-pink: #ff9ff3;
+    --pixel-blue: #54a0ff;
+    --pixel-green: #1dd1a1;
+    --pixel-yellow: #feca57;
+    --pixel-bg: #f5f6fa;
+    --pixel-text: #2f3640;
+    --pixel-border: #222f3e;
+    --pixel-card-bg: #ffffff;
+    --pixel-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Colors */
+[data-theme="dark"] {
+    --pixel-pink: #ff79c6;
+    --pixel-blue: #8be9fd;
+    --pixel-green: #50fa7b;
+    --pixel-yellow: #f1fa8c;
+    --pixel-bg: #282a36;
+    --pixel-text: #f8f8f2;
+    --pixel-border: #6272a4;
+    --pixel-card-bg: #44475a;
+    --pixel-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'DotGothic16', sans-serif;
+    background-color: var(--pixel-bg);
+    color: var(--pixel-text);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease;
+}
+
+/* Animated Background */
+.pixel-bg-animated {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg-pixel-spring.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.7;
+    image-rendering: pixelated;
+    animation: bgPan 60s linear infinite;
+}
+
+@keyframes bgPan {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.pixel-container {
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.pixel-card {
+    background-color: var(--pixel-card-bg);
+    border: 4px solid var(--pixel-border);
+    border-radius: 0;
+    box-shadow: var(--pixel-shadow);
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    image-rendering: pixelated;
+    transition: all 0.5s ease;
+}
+
+/* ... (keep previous styles for header, content, footer, etc.) ... */
+
+/* Floating Flowers Animation */
+.floating-flowers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-flowers::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/pixel-flower.png');
+    background-size: contain;
+    animation: float 15s linear infinite;
+    image-rendering: pixelated;
+}
+
+.floating-flowers::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/pixel-flower.png');
+    background-size: contain;
+    animation: float 20s linear infinite reverse;
+    image-rendering: pixelated;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Music Player */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+.music-btn {
+    background-color: var(--pixel-green);
+    color: var(--pixel-text);
+}
+
+/* Dark Mode Toggle */
+.dark-mode-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: var(--pixel-blue);
+    color: var(--pixel-text);
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.project-item {
+    border: 3px solid var(--pixel-border);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--pixel-border);
+}
+
+.project-preview {
+    width: 100%;
+    height: 100px;
+    background-color: var(--pixel-pink);
+    margin-bottom: 10px;
+    image-rendering: pixelated;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pixel-container {
+        margin: 10px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .music-player, .dark-mode-btn {
+        bottom: 10px;
+    }
+    
+    .music-player {
+        left: 10px;
+    }
+    
+    .dark-mode-btn {
+        right: 10px;
+    }
+}

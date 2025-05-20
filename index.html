@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pixel Portfolio - Spring Edition</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="audio/spring-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="musicToggle" class="pixel-btn music-btn">
+            <i class="fas fa-music"></i> <span>Play Music</span>
+        </button>
+    </div>
+    
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="pixel-btn dark-mode-btn">
+        <i class="fas fa-moon"></i> <span>Dark Mode</span>
+    </button>
+    
+    <!-- Animated Background -->
+    <div class="pixel-bg-animated"></div>
+    
+    <!-- Main Content -->
+    <div class="pixel-container">
+        <div class="pixel-card">
+            <div class="pixel-header">
+                <div class="pixel-avatar">
+                    <img src="images/profile-pixel.png" alt="Pixel Avatar">
+                </div>
+                <h1 class="pixel-title">Hello World!</h1>
+                <h2 class="pixel-subtitle">I'm a New IT Explorer</h2>
+            </div>
+            
+            <div class="pixel-content">
+                <div class="pixel-bio">
+                    <h3><i class="fas fa-user pixel-icon"></i> Biodata</h3>
+                    <ul class="pixel-list">
+                        <li><span>Nama:</span> [Nama Anda]</li>
+                        <li><span>Umur:</span> [Umur Anda]</li>
+                        <li><span>Lokasi:</span> [Kota Anda]</li>
+                        <li><span>Minat:</span> Web Dev, Game Dev, AI</li>
+                    </ul>
+                </div>
+                
+                <div class="pixel-skills">
+                    <h3><i class="fas fa-code pixel-icon"></i> Skills</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar html">HTML</div>
+                        <div class="skill-bar css">CSS</div>
+                        <div class="skill-bar js">JavaScript</div>
+                    </div>
+                </div>
+                
+                <div class="pixel-projects">
+                    <h3><i class="fas fa-folder pixel-icon"></i> Projects</h3>
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <div class="project-preview"></div>
+                            <h4>Project 1</h4>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-preview"></div>
+                            <h4>Project 2</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pixel-footer">
+                <h3><i class="fas fa-link pixel-icon"></i> Connect With Me</h3>
+                <div class="social-links">
+                    <a href="#" class="pixel-btn github"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" class="pixel-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#" class="pixel-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#" class="pixel-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Pixel Flowers -->
+    <div class="floating-flowers"></div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
